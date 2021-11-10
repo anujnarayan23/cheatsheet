@@ -1,7 +1,7 @@
-1. Find the last modified files within 3 hours
+## 1. Find the last modified files within 3 hours
 Ans find . -mtime -0.12
 
-2. Given a Log file, How many 404 error codes are there in the file
+## 2. Given a Log file, How many 404 error codes are there in the file
 Ans 
 find /home/pranav -type f -name "2020_04_22.shared_http_server.192.168.XX.XX.log" |while read file
   do
@@ -12,12 +12,12 @@ find /home/pranav -type f -name "2020_04_22.shared_http_server.192.168.XX.XX.log
      fi
   done
   
-3. Display the first 3 lines & last line from the file using bash command 
+## 3. Display the first 3 lines & last line from the file using bash command 
 ANs -
  tail -3 filename (last 3 lines) 
  head -3 file name (First 3 lines)
  
-4. /bin/bash VS /bin/sh?
+## 4. /bin/bash VS /bin/sh?
 Ans -
 #!/bin/sh :Executes the script using the Bourne shell or a compatible shell, with path /bin/sh
 #!/bin/bash :Executes the script using the Bash shell.
@@ -25,11 +25,11 @@ Ans -
 #!/usr/bin/perl -T :Executes the script using perl with the option of taint checks
 #!/usr/bin/env python :Executes the script using python by looking up the path to the python interpreter automatically from the environment variables
 
-5. What does #! Mean in Linux?
+## 5. What does #! Mean in Linux?
 Ans -
 #! specifies the program with which the script should be executed if you not explicitly call it which any.
 
-6. 8: Use sed command to replace the content of the file (emulate tac command)
+## 6. 8: Use sed command to replace the content of the file (emulate tac command)
 Eg:
 if cat fille
 ABCD
@@ -45,11 +45,11 @@ Here G command appends to the pattern space,
 h command copies pattern buffer to hold buffer
 and d command deletes the current pattern space.
 
-7. 9: Given a file, replace all occurrence of word “ABC” with “DEF” from 5th line till end in only those lines that contains word “MNO”
+## 7. Given a file, replace all occurrence of word “ABC” with “DEF” from 5th line till end in only those lines that contains word “MNO”
 
 ANS - sed –n '5,$p' file1|sed '/MNO/s/ABC/DEF/'
 
-8. Given a file, write a command sequence to find the count of each word.
+## 8. Given a file, write a command sequence to find the count of each word.
 ANS -
 tr –s  "(backslash)040" <file1|tr –s  "(backslash)011"|tr "(backslash)040 (backslash)011" "(backslash)012" |uniq –c
 where "(backslash)040" is octal equivalent of "space"
@@ -57,7 +57,7 @@ where "(backslash)040" is octal equivalent of "space"
 
 “(backslash)012” is an octal equivalent of the newline character.
 
-9.How will you find the 99th line of a file using only tail and head command?
+## 9.How will you find the 99th line of a file using only tail and head command?
 ANS-
 tail +99 file1|head -1
 
