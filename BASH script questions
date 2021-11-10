@@ -1,0 +1,63 @@
+1. Find the last modified files within 3 hours
+Ans find . -mtime -0.12
+
+2. Given a Log file, How many 404 error codes are there in the file
+Ans 
+find /home/pranav -type f -name "2020_04_22.shared_http_server.192.168.XX.XX.log" |while read file
+  do
+    RESULT=$(egrep "[^0](404)" $file)
+      if [[ ! -z $RESULT ]]
+         then
+            echo "Error(s) in $file on $HOSTNAME at "$(date)": $RESULT">> log_result.txt
+     fi
+  done
+  
+3. Display the first 3 lines & last line from the file using bash command 
+ANs -
+ tail -3 filename (last 3 lines) 
+ head -3 file name (First 3 lines)
+ 
+4. /bin/bash VS /bin/sh?
+Ans -
+#!/bin/sh :Executes the script using the Bourne shell or a compatible shell, with path /bin/sh
+#!/bin/bash :Executes the script using the Bash shell.
+#!/bin/csh -f :Executes the script using C shell or a compatible shell.
+#!/usr/bin/perl -T :Executes the script using perl with the option of taint checks
+#!/usr/bin/env python :Executes the script using python by looking up the path to the python interpreter automatically from the environment variables
+
+5. What does #! Mean in Linux?
+Ans -
+#! specifies the program with which the script should be executed if you not explicitly call it which any.
+
+6. 8: Use sed command to replace the content of the file (emulate tac command)
+Eg:
+if cat fille
+ABCD
+EFGH
+
+Then O/p should be
+
+EFGH
+ABCD
+
+ANS - sed '1! G; h;$!d' file1
+Here G command appends to the pattern space,
+h command copies pattern buffer to hold buffer
+and d command deletes the current pattern space.
+
+7. 9: Given a file, replace all occurrence of word “ABC” with “DEF” from 5th line till end in only those lines that contains word “MNO”
+
+ANS - sed –n '5,$p' file1|sed '/MNO/s/ABC/DEF/'
+
+8. Given a file, write a command sequence to find the count of each word.
+ANS -
+tr –s  "(backslash)040" <file1|tr –s  "(backslash)011"|tr "(backslash)040 (backslash)011" "(backslash)012" |uniq –c
+where "(backslash)040" is octal equivalent of "space"
+“(backslash)011” is an octal equivalent of “tab character” and
+
+“(backslash)012” is an octal equivalent of the newline character.
+
+9.How will you find the 99th line of a file using only tail and head command?
+ANS-
+tail +99 file1|head -1
+
