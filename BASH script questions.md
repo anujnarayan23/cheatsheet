@@ -115,9 +115,9 @@ Command - awk –F ':' '{print $1}' /etc/shadow|uniq -u
 
 ## 18. How to set an array in Linux?
 ANS-
-Syntax in ksh:
+Syntax in ksh://
 Set –A arrayname= (element1 element2 ….. element)
-In bash
+In bash//
 A=(element1 element2 element3 …. elementn)
 
 ## 19. Write down the syntax of “for ” loop
