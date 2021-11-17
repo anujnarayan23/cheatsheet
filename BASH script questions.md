@@ -134,17 +134,18 @@ du -s /home/user1 ….where user1 is the user for whom the total disk space need
 
 ## 21. Write the syntax for “if” conditionals in Linux?
 ANS-
-Syntax
-If  condition is successful
-then
-execute commands
-else
-execute commands
-fi
+Syntax//
+If  condition is successful//
+then//
+execute commands//
+else//
+execute commands//
+fi//
 
 ## 22. How do we delete all blank lines in a file?
 ANS-
 sed  '^ [(backslash)011(backslash)040]*$/d' file1
+
 
 where (backslash)011 is an octal equivalent of space and
 (backslash)040 is an octal equivalent of the tab
