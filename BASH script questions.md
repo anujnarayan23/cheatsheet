@@ -14,7 +14,7 @@ find /home/pranav -type f -name "2020_04_22.shared_http_server.192.168.XX.XX.log
   
 ## 3. Display the first 3 lines & last line from the file using bash command 
 ANs -
- tail -3 filename (last 3 lines) 
+ tail -3 filename (last 3 lines) \n 
  head -3 file name (First 3 lines)
  
 ## 4. /bin/bash VS /bin/sh?
