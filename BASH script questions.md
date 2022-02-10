@@ -166,3 +166,15 @@ umask 777
 ## 26. How can we find the process name from its process id?
 ANS-
 We can use “ps –p ProcessId”
+
+## 27. Find empty files in linux directory.
+ANs-
+find . -empty / find give dir -empty
+
+## 28. SSH Connectivity betweeen two nodes & what are the files present in ssh directory folder.
+Ans-
+ssh-copy-id user@10.0.0.1
+Files - id_rsa, id_rsa.pub, known_hosts, auth-keys
+
+## 29. how to check the load on system
+Ans - using top command
