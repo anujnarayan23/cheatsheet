@@ -1,0 +1,27 @@
+chmod 777 www/var/*
+
+Storage in k8s
+Ans- 
+Volumes
+
+Volumes are a storage unit accessible to containers in a Pod. Some volume types are backed by ephemeral storage. Ephemeral storage types (for example, emptyDir, ConfigMap, and Secrets) do not persist after the Pod ceases to exist. These types are useful for storing configuration information and as scratch space for applications. You can manage your local ephemeral storage resources as you do your CPU and memory resources. Other volume types are backed by durable storage.
+
+Persistent volumes
+
+A PersistentVolume is a cluster resource that Pods can use for durable storage. A PersistentVolumesClaim can be used to dynamically provision a PersistentVolume backed by Compute Engine persistent disks for use in your cluster. You can also use a PersistentVolumeClaim to provision other types of backing storage like NFS.
+
+1.Force unlock
+terraform force-unlock dynamodb id - to unlock pervious terraform apply command process
+
+2.Referesh
+terraform state list - to see what things has been created
+terraform refresh - sync with remote state files
+
+3.How to create particulare resource from terraform file
+terraform apply -target=the resource which we want to create . block name / eg aws_s3_bucket.b
+
+4.terraform workspace
+terraform workspace list - to check the all workspace
+terraform workspace new dev - to create a new workspace
+terraform workspace show - show the current workspace we pointed out
+terraform workspace delete give workspace name - to delete the workspace
