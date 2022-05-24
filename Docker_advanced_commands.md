@@ -50,3 +50,44 @@ copying the file to\from the running container
    --force-rm		  --> Always remove intermediate containers <br />
    --quiet , -q		  --> Suppress the build output and print image ID on success <br />
    --rm	true	          --> Remove intermediate containers after a successful build <br />
+   
+   
+   There are three types of volumes: host, anonymous, and named:
+
+1. A host volume lives on the Docker host's filesystem and can be accessed from within the container. To create a host volume:
+
+docker run -v /path/on/host:/path/in/container ...
+
+2.An anonymous volume is useful for when you would rather have Docker handle where the files are stored. It can be difficult, however, to refer to the same volume over time when it is an anonymous volumes. To create an anonymous volume:
+
+docker run -v /path/in/container ...
+
+3.A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
+
+docker volume create somevolumename
+docker run -v name:/path/in/container ...
+
+dockerfile - 
+
+Form registery-image url
+
+User 0
+Run mkdir ./dist
+copy httpd.conf /etc/httpd/conf
+copy ./dist /var/www/html
+RUN chmod 755 -R . /var/www/html   - read & execute & owner can only modify the file
+User 1000
+
+
+In bc.yaml file the strategry is mentioned as docker file so it will pick the cutome docker file which we have mentioned in the bitbucket.
+
+
+Shell script for pallindrom
+
+read palindrome
+reverse=$( echo $palindrome | rev )
+if [ $palindrome = $reverse ]; then 
+echo "its palindrome"
+else
+echo "its not palindrome"
+fi
